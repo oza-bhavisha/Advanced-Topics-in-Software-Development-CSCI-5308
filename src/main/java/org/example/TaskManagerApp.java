@@ -127,7 +127,7 @@ public class TaskManagerApp {
         System.out.println("Enter the date on which the task is created");
         String createDate = scanner.nextLine();
 
-        //Task task = new Task(addName, description, manager, createDate);
+        Task task = new Task(addName, description, manager, createDate);
         taskManager.addTask(task);
         System.out.println("Your task has been added successfully.");
     }
