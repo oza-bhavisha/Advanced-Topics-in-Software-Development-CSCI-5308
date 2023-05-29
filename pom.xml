@@ -45,6 +45,11 @@
             <version>5.2.0</version>
         </dependency>
         <dependency>
+            <groupId>org.junit</groupId>
+            <artifactId>junit5-engine</artifactId>
+            <version>5.0.0-ALPHA</version>
+        </dependency>
+        <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
             <version>5.2.0</version>
@@ -61,7 +66,5 @@
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
         </dependency>
-
     </dependencies>
-
 </project>

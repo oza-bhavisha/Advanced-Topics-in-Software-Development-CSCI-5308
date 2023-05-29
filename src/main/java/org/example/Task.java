@@ -1,6 +1,7 @@
 package org.example;
 
 public class Task {
+    public static final int MAX_LENGTH = 0;
     private final String manager;
     private final String createDate;
     private final String taskName;
@@ -8,6 +9,7 @@ public class Task {
     private Priority priority;
     private Deadline deadline;
     private boolean completed;
+
 
     /**
      * Task constructor

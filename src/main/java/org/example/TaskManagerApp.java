@@ -6,8 +6,14 @@ import java.util.Scanner;
 public class TaskManagerApp {
 
     private final TaskManager taskManager;
-    private final Scanner scanner;
+    private Scanner scanner;
     private Database database;
+    private String taskName;
+    private String manager;
+    private String createDate;
+
+    private String description;
+    Task task = new Task(taskName, description, manager, createDate);
 
     public TaskManagerApp(){
         database = new MockDatabase();
@@ -111,7 +117,7 @@ public class TaskManagerApp {
     }
 
     // Adds a new task to the task manager based on the user input
-    private void addTask() {
+    public void addTask() {
         System.out.println("Enter task name");
         String addName = scanner.nextLine();
         System.out.println("Enter task description");
@@ -121,13 +127,13 @@ public class TaskManagerApp {
         System.out.println("Enter the date on which the task is created");
         String createDate = scanner.nextLine();
 
-        Task task = new Task(addName, description, manager, createDate);
+        //Task task = new Task(addName, description, manager, createDate);
         taskManager.addTask(task);
         System.out.println("Your task has been added successfully.");
     }
 
     // Edits the existing task based on the user input
-    private void editTask() {
+    public void editTask() {
         System.out.print("Enter the name of the task which you want to edit: ");
         String editName = scanner.nextLine();
 
@@ -147,7 +153,7 @@ public class TaskManagerApp {
     }
 
     // Deletes the task based on the user input
-    private void deleteTask() {
+    public void deleteTask() {
         System.out.print("Enter the name of the task which you want to delete: ");
         String deleteName = scanner.nextLine();
 
@@ -161,7 +167,7 @@ public class TaskManagerApp {
     }
 
     // Sets the task priority based on the user input
-    private void setPriority() {
+    public void setPriority() {
         System.out.print("Enter the name of the task: ");
         String priorityName = scanner.nextLine();
 
@@ -183,7 +189,7 @@ public class TaskManagerApp {
     }
 
     // Sets the task deadline based on the user input
-    private void setDeadline() {
+    public void setDeadline() {
         System.out.print("Enter the name of the task: ");
         String deadlineTaskName = scanner.nextLine();
 
@@ -205,7 +211,7 @@ public class TaskManagerApp {
     }
 
     // Sets the task completion status based on the user input
-    private void setCompleted() {
+    public void setCompleted() {
         System.out.print("Enter the name of the task: ");
         String completedName = scanner.nextLine();
 
@@ -227,7 +233,7 @@ public class TaskManagerApp {
     }
 
     // Filters the task by priority
-    private void filterByPriority() {
+    public void filterByPriority() {
         System.out.print("Enter priority to filter by (LOW, MEDIUM, HIGH): ");
         String inputForPriority = scanner.nextLine();
 
@@ -241,7 +247,7 @@ public class TaskManagerApp {
     }
 
     // Filters the task by deadline
-    private void filterByDeadline() {
+    public void filterByDeadline() {
         System.out.print("Enter deadline to filter by (NONE, TODAY, TOMORROW, NEXT_WEEK): ");
         String inputForDeadline = scanner.nextLine();
 
@@ -255,7 +261,7 @@ public class TaskManagerApp {
     }
 
     // Filters the task by status
-    private void filterByStatus() {
+    public void filterByStatus() {
         System.out.print("Enter completion status to filter by (true/false): ");
         String inoutForStatus = scanner.nextLine();
 
@@ -268,7 +274,7 @@ public class TaskManagerApp {
         }
     }
     // Show all tasks
-    private void displayAllTasks() {
+    public void displayAllTasks() {
         System.out.println("All tasks: ");
         taskManager.getAllTasks().forEach(System.out::println);
     }
