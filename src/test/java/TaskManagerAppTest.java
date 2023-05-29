@@ -166,6 +166,8 @@ class TaskManagerAppTest {
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
         taskManagerApp.addTask();
+        String expectedOutput = "Valid input.";
+        assertEquals(expectedOutput, input);
     }
 
     @Test
@@ -174,6 +176,8 @@ class TaskManagerAppTest {
         System.setIn(new ByteArrayInputStream(input.getBytes()));
 
         taskManagerApp.addTask();
+        String expectedOutput = "Valid input.";
+        assertEquals(expectedOutput, input);
     }
 
     @Test

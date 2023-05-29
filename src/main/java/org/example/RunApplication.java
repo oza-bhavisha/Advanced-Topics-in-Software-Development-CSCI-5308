@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.*;
+
 /**
  * Class responsible for running the TaskManager application.
  *
